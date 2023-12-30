@@ -1,9 +1,6 @@
 package org.meghraj.tests;
 
-import org.meghraj.constants.FrameworkConstant;
 import org.meghraj.driver.Driver;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -15,13 +12,13 @@ public class BaseTest {
 
 
     @BeforeMethod
-    public void setUp() {
+    protected void setUp() throws Exception {
 
         Driver.initDriver();
     }
 
     @AfterMethod
-    public void tearDown() {
+    protected void tearDown() {
         Driver.quitDriver();
     }
 }
