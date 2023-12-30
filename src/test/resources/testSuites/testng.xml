@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LoginTestSuite">
+    <test thread-count="2" name="MyTest" parallel="methods">
+        <classes>
+            <class name="org.meghraj.tests.LoginpageTest" />
+            <class name="org.meghraj.tests.HomepageTest" />
+        </classes>
+    </test>
+</suite>
