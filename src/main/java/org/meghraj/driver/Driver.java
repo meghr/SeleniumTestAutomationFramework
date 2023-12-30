@@ -5,6 +5,7 @@ import org.meghraj.utils.ReadPropertyFile;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 public final class Driver {
 
@@ -20,6 +21,7 @@ public final class Driver {
             System.setProperty("webdriver.gecko.driver", FrameworkConstant.getFirefoxDriverPath());
 
             DriverManager.setDriver(new FirefoxDriver());
+            DriverManager.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             DriverManager.getDriver().get(ReadPropertyFile.get("url"));
         }
     }

@@ -1,5 +1,7 @@
 package org.meghraj.utils;
 
+import org.meghraj.constants.FrameworkConstant;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -19,7 +21,7 @@ public final class ReadPropertyFile {
     static {
         Properties properties = new Properties();
         try {
-            FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/config/config.properties");
+            FileInputStream fileInputStream = new FileInputStream(FrameworkConstant.getConfigPropertyPath());
             properties.load(fileInputStream);
 
             for (Map.Entry<Object, Object> entry : properties.entrySet()
